@@ -1,0 +1,101 @@
+Description,Scientific Name,Max Score,Total Score,Query Cover,E value,Per. Ident,Acc. Len,Accession
+"secreted RxLR effector peptide protein, putative [Phytophthora infestans T30-4]",Phytophthora infestans T30-4,1389,1389,100%,0,100,678,XP_002896931.1
+hypothetical protein PInf_006398 [Phytophthora infestans],Phytophthora infestans,1190,1190,85%,0,99.83,579,KAI9984868.1
+"secreted RxLR effector peptide protein, putative [Phytophthora infestans T30-4]",Phytophthora infestans T30-4,932,1155,98%,0,90.62,508,XP_002896947.1
+hypothetical protein GN958_ATG18931 [Phytophthora infestans],Phytophthora infestans,783,863,97%,0,59.73,609,KAF4131898.1
+hypothetical protein PInf_006409 [Phytophthora infestans],Phytophthora infestans,742,964,83%,0,89.3,409,KAI9984874.1
+hypothetical protein PInf_006458 [Phytophthora infestans],Phytophthora infestans,741,963,83%,0,89.05,409,KAI9984904.1
+Putative RxLR effector [Phytophthora palmivora],Phytophthora palmivora,512,512,98%,7.00E-169,42.71,721,POM73314.1
+hypothetical protein PHYPSEUDO_014425 [Phytophthora pseudosyringae],Phytophthora pseudosyringae,506,506,100%,4.00E-167,40.71,695,KAG7387331.1
+Avirulence protein (Avh) [Phytophthora palmivora],Phytophthora palmivora,494,989,96%,3.00E-162,43.33,697,POM73220.1
+hypothetical protein F444_13250 [Phytophthora nicotianae P1976],Phytophthora nicotianae P1976,480,480,97%,3.00E-157,41.39,661,ETO70252.1
+hypothetical protein F444_13225 [Phytophthora nicotianae P1976],Phytophthora nicotianae P1976,477,477,99%,4.00E-156,39.97,677,ETO70277.1
+hypothetical protein AM587_10010280 [Phytophthora nicotianae],Phytophthora nicotianae,477,477,99%,5.00E-156,39.97,677,KUF78076.1
+hypothetical protein F441_13186 [Phytophthora nicotianae CJ01A1],Phytophthora nicotianae CJ01A1,477,477,97%,5.00E-156,41.09,661,ETP11285.1
+hypothetical protein F443_22784 [Phytophthora nicotianae P1569],Phytophthora nicotianae P1569,476,476,97%,6.00E-156,41.24,661,ETI30095.1
+hypothetical protein AM587_10001452 [Phytophthora nicotianae],Phytophthora nicotianae,476,476,99%,9.00E-156,39.97,677,KUF86493.1
+hypothetical protein F443_13150 [Phytophthora nicotianae P1569],Phytophthora nicotianae P1569,476,476,99%,3.00E-155,39.97,694,ETI41618.1
+hypothetical protein F442_13024 [Phytophthora nicotianae P10297],Phytophthora nicotianae P10297,475,475,99%,4.00E-155,39.82,677,ETP39517.1
+hypothetical protein PPTG_03195 [Phytophthora nicotianae INRA-310],Phytophthora nicotianae INRA-310,475,475,99%,4.00E-155,39.97,691,XP_008894121.1
+hypothetical protein PPTG_03190 [Phytophthora nicotianae INRA-310],Phytophthora nicotianae INRA-310,475,475,99%,4.00E-155,39.97,677,XP_008894116.1
+hypothetical protein F441_13107 [Phytophthora nicotianae CJ01A1],Phytophthora nicotianae CJ01A1,475,475,99%,6.00E-155,39.82,694,ETP11372.1
+hypothetical protein F441_13104 [Phytophthora nicotianae CJ01A1],Phytophthora nicotianae CJ01A1,473,473,99%,2.00E-154,39.68,677,ETP11375.1
+hypothetical protein L915_12844 [Phytophthora nicotianae],Phytophthora nicotianae,473,473,99%,3.00E-154,39.68,694,ETK81673.1
+Putative RxLR effector [Phytophthora palmivora],Phytophthora palmivora,470,470,100%,3.00E-153,39.77,675,POM81594.1
+hypothetical protein P3T76_010363 [Phytophthora citrophthora],Phytophthora citrophthora,473,473,95%,7.00E-153,40.77,785,KAK1935668.1
+hypothetical protein L916_12833 [Phytophthora nicotianae],Phytophthora nicotianae,468,468,97%,2.00E-152,40.63,661,ETL34990.1
+Zinc finger FYVE domain-containing protein 9 [Phytophthora nicotianae],Phytophthora nicotianae,464,593,88%,6.00E-152,41.74,599,KUF78780.1
+hypothetical protein PHMEG_00020617 [Phytophthora megakarya],Phytophthora megakarya,465,465,100%,2.00E-151,39.44,672,OWZ07043.1
+hypothetical protein PF003_g11432 [Phytophthora fragariae],Phytophthora fragariae,464,464,99%,7.00E-151,40.23,682,KAE8905246.1
+hypothetical protein PR002_g5128 [Phytophthora rubi],Phytophthora rubi,462,462,93%,2.00E-150,42.01,675,KAE9040125.1
+hypothetical protein PF003_g11424 [Phytophthora fragariae],Phytophthora fragariae,462,462,96%,4.00E-150,40.4,686,KAE8904971.1
+RxLR128 [Phytophthora capsici],Phytophthora capsici,458,458,98%,1.00E-148,39,669,AMJ52088.1
+hypothetical protein PRNP1_015175 [Phytophthora ramorum],Phytophthora ramorum,457,457,99%,5.00E-148,37.89,677,KAL4140100.1
+hypothetical protein PI125_g12471 [Phytophthora idaei],Phytophthora idaei,449,449,88%,2.00E-146,40.64,590,KAG3107710.1
+hypothetical protein V7S43_008604 [Phytophthora oleae],Phytophthora oleae,452,452,99%,3.00E-146,39.21,667,KAL3666352.1
+RxLR effector protein [Phytophthora ramorum],Phytophthora ramorum,451,451,99%,7.00E-146,37.74,677,XP_067750676.1
+RxLR effector protein [Phytophthora ramorum],Phytophthora ramorum,450,450,99%,1.00E-145,38.33,677,XP_067739602.1
+hypothetical protein KRP22_014804 [Phytophthora ramorum],Phytophthora ramorum,450,450,99%,2.00E-145,38.03,677,KAL4163225.1
+hypothetical protein F442_13047 [Phytophthora nicotianae P10297],Phytophthora nicotianae P10297,447,447,97%,7.00E-145,40.27,637,ETP39511.1
+hypothetical protein L916_12788 [Phytophthora nicotianae],Phytophthora nicotianae,447,447,100%,2.00E-144,39.21,673,ETL35040.1
+hypothetical protein F442_13063 [Phytophthora nicotianae P10297],Phytophthora nicotianae P10297,446,446,100%,8.00E-144,39.21,673,ETP39462.1
+RxLR effector protein [Phytophthora ramorum],Phytophthora ramorum,446,446,99%,8.00E-144,38.53,681,XP_067739601.1
+hypothetical protein P3T76_010338 [Phytophthora citrophthora],Phytophthora citrophthora,445,445,99%,1.00E-143,38.45,665,KAK1935643.1
+hypothetical protein PRIC2_013817 [Phytophthora ramorum],Phytophthora ramorum,444,444,99%,3.00E-143,37.74,677,KAL4114920.1
+hypothetical protein L917_12636 [Phytophthora nicotianae],Phytophthora nicotianae,444,444,100%,4.00E-143,39.07,673,ETL88274.1
+hypothetical protein PRIC1_014091 [Phytophthora ramorum],Phytophthora ramorum,444,444,99%,5.00E-143,37.59,677,KAL4086387.1
+hypothetical protein PF002_g16504 [Phytophthora fragariae],Phytophthora fragariae,444,444,94%,7.00E-143,40.28,682,KAE9218429.1
+hypothetical protein V7S43_003977 [Phytophthora oleae],Phytophthora oleae,442,442,94%,7.00E-143,40.15,631,KAL3670791.1
+hypothetical protein P3T76_010383 [Phytophthora citrophthora],Phytophthora citrophthora,442,442,99%,2.00E-142,38.17,674,KAK1935688.1
+hypothetical protein PF003_g9210 [Phytophthora fragariae],Phytophthora fragariae,442,442,94%,3.00E-142,40.12,682,KAE8906671.1
+hypothetical protein PF007_g16729 [Phytophthora fragariae],Phytophthora fragariae,441,441,94%,4.00E-142,40.12,682,KAE9097137.1
+hypothetical protein PF003_g9212 [Phytophthora fragariae],Phytophthora fragariae,441,441,93%,5.00E-142,40.19,683,KAE8906674.1
+hypothetical protein PF003_g9211 [Phytophthora fragariae],Phytophthora fragariae,441,441,93%,6.00E-142,40.19,683,KAE8906673.1
+hypothetical protein PR003_g953 [Phytophthora rubi],Phytophthora rubi,439,439,95%,9.00E-142,39.79,640,KAE9359091.1
+hypothetical protein PRIC2_014638 [Phytophthora ramorum],Phytophthora ramorum,439,439,99%,5.00E-141,37.15,677,KAL4114315.1
+hypothetical protein PF003_g9210 [Phytophthora fragariae],Phytophthora fragariae,435,435,89%,8.00E-141,40.86,598,KAE8906672.1
+hypothetical protein V7S43_007352 [Phytophthora oleae],Phytophthora oleae,434,434,83%,2.00E-140,40.53,570,KAL3667801.1
+hypothetical protein PF008_g14944 [Phytophthora fragariae],Phytophthora fragariae,434,434,89%,4.00E-140,40.69,598,KAE9332438.1
+hypothetical protein PF011_g15193 [Phytophthora fragariae],Phytophthora fragariae,435,435,94%,2.00E-139,39.81,682,KAE8998094.1
+hypothetical protein P3T76_010387 [Phytophthora citrophthora],Phytophthora citrophthora,434,434,99%,2.00E-139,37.83,673,KAK1935692.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,432,630,88%,2.00E-139,40.3,601,OWZ00664.1
+hypothetical protein P3T76_010369 [Phytophthora citrophthora],Phytophthora citrophthora,430,430,84%,2.00E-139,40.66,564,KAK1935674.1
+hypothetical protein ON010_g4940 [Phytophthora cinnamomi],Phytophthora cinnamomi,433,433,99%,5.00E-139,37.76,675,KAJ8571893.1
+hypothetical protein PR002_g5127 [Phytophthora rubi],Phytophthora rubi,429,732,88%,1.00E-138,40.98,584,KAE9040118.1
+hypothetical protein PR003_g13645 [Phytophthora rubi],Phytophthora rubi,429,732,88%,2.00E-138,40.98,584,KAE9334190.1
+hypothetical protein P3T76_005375 [Phytophthora citrophthora],Phytophthora citrophthora,429,429,93%,2.00E-137,37.64,657,KAK1943979.1
+hypothetical protein L917_12945 [Phytophthora nicotianae],Phytophthora nicotianae,427,427,90%,2.00E-137,39.74,610,ETL87950.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,424,531,89%,2.00E-136,39.77,600,OWZ06972.1
+unnamed protein product [Phytophthora fragariaefolia],Phytophthora fragariaefolia,422,490,88%,3.00E-136,40.5,557,GMF30508.1
+hypothetical protein P3T76_005618 [Phytophthora citrophthora],Phytophthora citrophthora,426,426,90%,4.00E-136,39.74,674,KAK1942981.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,427,427,98%,1.00E-135,38.72,746,OWZ18603.1
+hypothetical protein ON010_g10805 [Phytophthora cinnamomi],Phytophthora cinnamomi,424,424,95%,2.00E-135,39.45,673,KAJ8550267.1
+hypothetical protein PPTG_21237 [Phytophthora nicotianae INRA-310],Phytophthora nicotianae INRA-310,421,421,100%,2.00E-134,37.9,645,XP_008894738.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,417,417,91%,3.00E-133,36.96,624,OWZ11716.1
+hypothetical protein PR001_g917 [Phytophthora rubi],Phytophthora rubi,421,665,93%,4.00E-133,39.41,764,KAE9051982.1
+RxLR effector protein [Phytophthora ramorum],Phytophthora ramorum,419,419,98%,6.00E-133,36.43,701,XP_067750679.1
+hypothetical protein V7S43_003967 [Phytophthora oleae],Phytophthora oleae,413,413,79%,7.00E-133,41.56,537,KAL3670781.1
+Avh456 [Phytophthora sojae],Phytophthora sojae,417,417,90%,1.00E-132,38.07,670,AEK81372.1
+hypothetical protein F442_13363 [Phytophthora nicotianae P10297],Phytophthora nicotianae P10297,414,414,93%,1.00E-132,39.59,596,ETP39162.1
+hypothetical protein P3T76_010352 [Phytophthora citrophthora],Phytophthora citrophthora,423,614,99%,2.00E-132,37.04,895,KAK1935657.1
+hypothetical protein PF003_g9090 [Phytophthora fragariae],Phytophthora fragariae,414,414,100%,1.00E-131,37.54,676,KAE8906618.1
+hypothetical protein PF003_g9214 [Phytophthora fragariae],Phytophthora fragariae,410,751,88%,2.00E-131,40.42,570,KAE8906667.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,411,411,89%,3.00E-131,38.63,600,OWZ14580.1
+hypothetical protein PF007_g16730 [Phytophthora fragariae],Phytophthora fragariae,410,751,87%,3.00E-131,40.49,571,KAE9097142.1
+hypothetical protein PInf_018324 [Phytophthora infestans],Phytophthora infestans,410,464,98%,4.00E-131,37.79,605,KAI9990759.1
+hypothetical protein PF011_g15194 [Phytophthora fragariae],Phytophthora fragariae,409,753,88%,4.00E-131,40.25,570,KAE8998101.1
+hypothetical protein PHYSODRAFT_286662 [Phytophthora sojae],Phytophthora sojae,413,413,90%,4.00E-131,38.07,670,XP_009531092.1
+Avh456 [Phytophthora sojae],Phytophthora sojae,412,412,90%,5.00E-131,38.07,670,AEK81373.1
+hypothetical protein PHMEG_00018512 [Phytophthora megakarya],Phytophthora megakarya,412,412,97%,6.00E-131,37.69,678,OWZ08874.1
+Avh456 [Phytophthora sojae],Phytophthora sojae,411,411,90%,2.00E-130,37.91,670,AEK81371.1
+hypothetical protein PF009_g16984 [Phytophthora fragariae],Phytophthora fragariae,408,748,87%,2.00E-130,40.32,571,KAE8933001.1
+hypothetical protein P3T76_002529 [Phytophthora citrophthora],Phytophthora citrophthora,410,410,99%,3.00E-130,37.08,662,KAK1945481.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,413,961,93%,4.00E-130,41.23,765,OWZ01365.1
+hypothetical protein PF011_g18362 [Phytophthora fragariae],Phytophthora fragariae,410,410,100%,4.00E-130,37.39,676,KAE8990437.1
+hypothetical protein PF001_g15447 [Phytophthora fragariae],Phytophthora fragariae,407,743,87%,5.00E-130,40.32,571,KAE9299420.1
+hypothetical protein PF008_g14943 [Phytophthora fragariae],Phytophthora fragariae,407,757,87%,6.00E-130,40.14,571,KAE9332432.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,409,409,98%,3.00E-129,36.77,706,OWZ01292.1
+hypothetical protein P3T76_002532 [Phytophthora citrophthora],Phytophthora citrophthora,407,407,99%,4.00E-129,37.41,662,KAK1945484.1
+Avirulence (Avh) protein [Phytophthora megakarya],Phytophthora megakarya,406,406,94%,5.00E-129,37.29,634,OWZ15788.1
+hypothetical protein L914_13027 [Phytophthora nicotianae],Phytophthora nicotianae,404,404,88%,2.00E-128,38.64,608,ETM41203.1
+hypothetical protein AM587_10002030 [Phytophthora nicotianae],Phytophthora nicotianae,402,402,95%,9.00E-128,37.63,621,KUF78968.1
