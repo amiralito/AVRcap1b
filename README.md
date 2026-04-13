@@ -1,6 +1,8 @@
 # Supporting scripts and material for "An effector from the potato late blight pathogen bridges ENTH-domain protein TOL9a to an activated helper NLR to suppress immunity"
 
 [![DOI](https://img.shields.io/badge/bioRxiv-doi.org/10.1101/2025.07.06.663370-BE2634)](https://doi.org/10.1101/2025.07.06.663370)
+[![DOI](https://zenodo.org/badge/995431397.svg)](https://doi.org/10.5281/zenodo.19554460)
+
 
 Jogi Madhuprakash, AmirAli Toghani, Hsuan Pai, Madia Harvey, Adam R. Bentham, Benjamin A. Seager, Enoch Lok Him Yuen, Juan Carlos De la Concepcion, David M. Lawson, Clare E. M. Stevenson, Angel Vergara-Cruces, Lida Derevnina, Tolga O. Bozkurt, Mark J. Banfield, Sophien Kamoun*, Mauricio P. Contreras*
 
