@@ -1,0 +1,326 @@
+---
+title: "AVRcap1b_entropy_v1"
+author: "AmirAli Toghani"
+date: "2025-06-03"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(Biostrings)
+library(ggtree)
+library(reshape2)
+library(svglite)
+library(entropy)
+library(ggseqlogo)
+library(plotly)
+library(treeio)
+
+```
+
+## filter the sequences by length again to obtain a cleaner dataset for entropy analysis:
+```{r}
+AVRcap1b_like_superclade_ref_seq_filtered <- AVRcap1b_like_superclade_ref_seq[AVRcap1b_like_superclade_ref_seq@ranges@width < 750]
+
+AVRcap1b_like_superclade_ref_seq_filtered <- AVRcap1b_like_superclade_ref_seq_filtered[AVRcap1b_like_superclade_ref_seq_filtered@ranges@width > 550]
+
+AVRcap1b_like_superclade_metadata_filtered <- AVRcap1b_like_superclade_metadata[match(AVRcap1b_like_superclade_ref_seq_filtered@ranges@NAMES, AVRcap1b_like_superclade_metadata$ID),]
+
+writeXStringSet(AVRcap1b_like_superclade_ref_seq_filtered, "/path/to/output/AVRcap1b_like_superclade_ref_filtered.fasta")
+
+```
+
+## Import AVRcap1b clade alignment for entropy:
+#### Two functions for calculating the entropy:
+```{r}
+# Function to convert a Biostrings/dataframe object to a dataframe and break the sequence into characters
+convert_to_dataframe <- function(alignment) {
+  # Extract sequences as strings
+  sequences <- sapply(alignment, as.character)
+  # Split each sequence into individual characters and convert to a matrix
+  alignment_matrix <- do.call(rbind, strsplit(sequences, ""))
+  # Convert the matrix to a dataframe
+  alignment_df <- as.data.frame(alignment_matrix, stringsAsFactors = FALSE)
+  # Naming columns as positions
+  colnames(alignment_df) <- paste(seq_len(ncol(alignment_df)))
+  
+  return(alignment_df)
+}
+
+
+# Function to calculate entropy for multiple columns and return as a dataframe
+calculate_entropy_df <- function(dataframe) {
+  # Function to calculate entropy for a single column
+  calculate_column_entropy <- function(column) {
+    # Remove any NA values (if there are any)
+    column <- na.omit(column)
+    # Calculate frequencies
+    freq_table <- table(column)
+    # Convert to proportions
+    proportions <- freq_table / sum(freq_table)
+    # Calculate and return entropy
+    entropy.empirical(proportions, unit = "log2")
+  }
+  
+  # Ensure that the dataframe is processed column-wise
+  entropy_values <- sapply(dataframe, calculate_column_entropy, simplify = FALSE)
+  
+  # Flatten the list if necessary
+  if (is.list(entropy_values)) {
+    entropy_values <- unlist(entropy_values)
+  }
+  
+  # Create a dataframe with positions and entropy values
+  entropy_df <- data.frame(Position = seq_along(entropy_values), Entropy = entropy_values)
+  
+  return(entropy_df)
+}
+
+# function to plot the entropy plots
+plot_entropy <- function(entropy_df, clade_name, max_x = 700) {
+  ggplot(entropy_df, aes(x = Position, y = Entropy)) +
+    geom_line(alpha = 0.5) +
+    geom_point(data = subset(entropy_df, Entropy > 1.5), aes(x = Position, y = Entropy), 
+               color = "#CC3333", size = 1) +
+    scale_color_identity() +
+    ylim(c(0, 4.32)) +
+    scale_x_continuous(limits = c(0, max_x), breaks = seq(0, max_x, by = 100)) +
+    geom_hline(yintercept = 1.5, linetype = "dotted", color = "#6C6C6C", size = 0.35, alpha = 1) +
+    theme(
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      panel.background = element_blank(),
+      plot.background = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      plot.title = element_blank(),
+      plot.subtitle = element_blank(),
+      plot.caption = element_blank(),
+      axis.line = element_line(colour = "black", size = 0.25)
+    )
+}
+```
+
+#### Import the alignment:
+```{r}
+AVrcap1b_clade_aln <- readAAStringSet("supplementary/AVRcap1b_like_superclade_ref_filtered_clu_trimmed.afa")
+
+
+AVRcap1b_like_superclade_metadata_filtered_clu <- AVRcap1b_like_superclade_metadata_filtered[AVRcap1b_like_superclade_metadata_filtered$ID %in% AVrcap1b_clade_aln@ranges@NAMES,]
+
+
+AVrcap1b_clade_aln_df <- convert_to_dataframe(AVrcap1b_clade_aln)
+AVrcap1b_clade_entropy <- calculate_entropy_df(AVrcap1b_clade_aln_df)
+
+
+```
+
+#### graphics prep:
+```{r}
+breakpoints <- c(0, 1.5, 4.32)
+
+theme_custom <- theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank(),
+  axis.ticks = element_blank(),
+  axis.title = element_blank(),
+  legend.position = "none",
+  panel.background = element_rect(fill = "transparent", colour = NA),
+  plot.background = element_rect(fill = "transparent", colour = NA),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  plot.margin = unit(c(0,0,0,0), "lines"),
+  plot.title = element_blank(),
+  plot.subtitle = element_blank(),
+  plot.caption = element_blank(),
+  panel.border = element_blank()
+)
+
+color_scheme <- make_col_scheme(
+  chars = c("K","R","H",
+            "D","E",
+            "A","V","L","I","W","F","M","Y",
+            "S","T","N","Q",
+            "P","C","G"),
+  groups = c("1","1","1",
+             "2","2",
+             "3","3","3","3","3","3","3","3",
+             "4","4","4","4",
+             "5","5","5"),
+  cols = c("#FF1F1F","#FF1F1F","#FF1F1F",
+           "#CC00CC","#CC00CC",
+           "#3333FF","#3333FF","#3333FF","#3333FF","#3333FF","#3333FF","#3333FF","#3333FF",
+           "#1FFF1F","#1FFF1F","#1FFF1F","#1FFF1F",
+           "#FFAE00","#FFAE00","#FFAE00")
+)
+
+theme_custom2 <- theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  legend.position = "none",
+  panel.background = element_blank(),
+  plot.background = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  plot.title = element_blank(),
+  plot.subtitle = element_blank(),
+  plot.caption = element_blank(),
+  axis.line = element_line(colour = "black", size = 0.25)
+)
+
+```
+
+#### Plot it:
+```{r}
+AVrcap1b_clade_entropy_p <- ggplot(AVrcap1b_clade_entropy, aes(x = Position, y = Entropy)) +
+  geom_line(alpha = 0.5) +
+  geom_point(data = subset(AVrcap1b_clade_entropy, Entropy > 2), aes(x = Position, y = Entropy), color = "#CC3333", size = 1) +
+  scale_color_identity() + # Use the colors as they are
+  ylim(c(0,4.32)) +
+  xlim(c(0,700)) +
+  geom_hline(yintercept = 2, linetype = "dotted", color = "#6C6C6C", size = 0.35, alpha = 1) +
+  theme_custom2
+
+AVrcap1b_clade_entropy_p
+
+ggplotly(AVrcap1b_clade_entropy_p)
+```
+
+## Import the subclades:
+```{r}
+
+subclade_tree_files <- list.files("supplementary/subclades", pattern = "\\.tree$", full.names = TRUE)
+subclade_trees <- list()
+
+for (file in subclade_tree_files) {
+  tree <- read.tree(file)
+  
+  subclade_trees[[basename(file)]] <- tree
+}
+
+```
+
+## calculate entropy and plot them:
+```{r}
+output_dir <- "/path/to/output/entropy_plots"
+
+all_entropy_results <- list()
+
+for (tree_file in subclade_tree_files) {
+  clade_name <- tools::file_path_sans_ext(basename(tree_file))
+  
+  # Read tree using ggtree/treeio
+  clade_tree <- treeio::read.newick(tree_file)
+  clade_tips <- clade_tree$tip.label
+  
+  # Extract matching sequences
+  matched_seqs <- AVrcap1b_clade_aln[names(AVrcap1b_clade_aln) %in% clade_tips]
+  
+  if (length(matched_seqs) < 2) {
+    warning(paste("Skipping", clade_name, "- too few sequences matched"))
+    next
+  }
+  
+  # Compute entropy
+  aln_df <- convert_to_dataframe(matched_seqs)
+  entropy_df <- calculate_entropy_df(aln_df)
+  all_entropy_results[[clade_name]] <- entropy_df
+  
+  entropy_plot <- plot_entropy(entropy_df, clade_name)
+
+  
+  # Save plot
+  output_path <- file.path(output_dir, paste0(clade_name, "_entropy.svg"))
+  ggsave(filename = output_path, plot = entropy_plot, width = 10, height = 1.5, dpi = "retina")
+  
+  message("Saved entropy plot for: ", clade_name)
+}
+
+```
+
+#### Export the entropy values:
+```{r}
+# Define output directory
+entropy_csv_dir <- "/path/to/output/entropy_values/"
+
+dir.create(entropy_csv_dir, showWarnings = FALSE, recursive = TRUE)
+
+# Write each entropy data frame to a CSV
+for (clade_name in names(all_entropy_results)) {
+  entropy_df <- all_entropy_results[[clade_name]]
+  
+  # Construct the output file path
+  out_path <- file.path(entropy_csv_dir, paste0(clade_name, "_entropy.csv"))
+  
+  # Write CSV
+  write.csv(entropy_df, file = out_path, row.names = FALSE)
+  
+  message("Saved entropy CSV for: ", clade_name)
+}
+
+```
+
+
+
+## now make the logo plots for the binding interfaces:
+```{r}
+output_dir <- "/path/to/output/entropy_plots/logo"
+
+interface1_start <- 103
+interface1_end   <- 113
+interface2_start <- 151
+interface2_end   <- 161
+
+
+for (tree_file in subclade_tree_files) {
+  clade_name <- tools::file_path_sans_ext(basename(tree_file))
+  
+  # Read the tree
+  clade_tree <- read.newick(tree_file)
+  clade_tips <- clade_tree$tip.label
+  
+  # Match sequences
+  matched_seqs <- AVrcap1b_clade_aln[names(AVrcap1b_clade_aln) %in% clade_tips]
+  
+  if (length(matched_seqs) < 2) {
+    warning(paste("Skipping", clade_name, "- too few sequences"))
+    next
+  }
+  
+  # Extract binding interface regions
+  interface1 <- subseq(matched_seqs, start = interface1_start, end = interface1_end)
+  interface2 <- subseq(matched_seqs, start = interface2_start, end = interface2_end)
+  
+  # Convert to character vectors
+  iface1_seqs <- sapply(interface1, as.character)
+  iface2_seqs <- sapply(interface2, as.character)
+
+  # Prepare data frames for geom_logo
+  df1 <- data.frame(seq = iface1_seqs)
+  df2 <- data.frame(seq = iface2_seqs)
+
+  # Plot logos with ggplot2 + geom_logo
+  logo1 <- ggplot(df1, aes(x = seq)) +
+    geom_logo(df1,method = "bits", col_scheme = color_scheme) +
+    theme_custom
+
+  logo2 <- ggplot(df2, aes(x = seq)) +
+    geom_logo(df2, method = "bits", col_scheme = color_scheme) +
+    theme_custom
+
+  # Save the plots
+  ggsave(filename = file.path(output_dir, paste0(clade_name, "_interface1_logo.svg")),
+         plot = logo1, width = 11, height = 1.5, dpi = 300, bg = "transparent")
+
+  ggsave(filename = file.path(output_dir, paste0(clade_name, "_interface2_logo.svg")),
+         plot = logo2, width = 11, height = 1.5, dpi = 300, bg = "transparent")
+
+  message("Saved logo plots (geom_logo) for clade: ", clade_name)
+}
+
+```
+
