@@ -1,0 +1,22 @@
+species
+Phytophthora aleatoria
+Phytophthora cactorum
+Phytophthora idaei
+Phytophthora andina
+Phytophthora infestans
+Phytophthora ipomoeae
+Phytophthora mirabilis
+Phytophthora nicotianae
+Phytophthora citrophthora
+Phytophthora capsici
+Phytophthora oleae
+Phytophthora pseudosyringae
+Phytophthora megakarya
+Phytophthora palmivora
+Phytophthora fragariae
+Phytophthora rubi
+Phytophthora sojae
+Phytophthora cinnamomi
+Phytophthora fragariaefolia
+Phytophthora lilii
+Phytophthora ramorum
